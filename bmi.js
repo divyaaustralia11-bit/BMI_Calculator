@@ -1,70 +1,89 @@
-// BMI Calculator JavaScript
+// BMI Calculator JavaScript with Error Handling
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('BMI Calculator loaded'); // Debug message
+    
     const bmiForm = document.getElementById('bmiForm');
     const resetBtn = document.getElementById('resetBtn');
     const resultDiv = document.getElementById('result');
-    const bmiValue = document.getElementById('bmiValue');
-    const bmiCategory = document.getElementById('bmiCategory');
-    const bmiMessage = document.getElementById('bmiMessage');
+    
+    if (!bmiForm) {
+        console.error('BMI form not found!');
+        return;
+    }
+    
+    bmiForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        console.log('Form submitted'); // Debug message
+        
+        // Clear previous errors
+        clearBMIErrors();
 
-    if (bmiForm) {
-        bmiForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Clear previous errors
-            clearBMIErrors();
+        // Get input values
+        let height = parseFloat(document.getElementById('height').value);
+        const heightUnit = document.getElementById('heightUnit').value;
+        const weight = parseFloat(document.getElementById('weight').value);
 
-            // Get input values
-            let height = parseFloat(document.getElementById('height').value);
-            const heightUnit = document.getElementById('heightUnit').value;
-            const weight = parseFloat(document.getElementById('weight').value);
+        console.log('Height:', height, 'Unit:', heightUnit, 'Weight:', weight); // Debug
 
-            let isValid = true;
+        let isValid = true;
 
-            // Validate height
-            if (isNaN(height) || height <= 0) {
-                showBMIError('heightError', 'Please enter a valid height');
-                isValid = false;
+        // Validate height
+        if (isNaN(height) || height <= 0) {
+            showBMIError('heightError', 'Please enter a valid height');
+            isValid = false;
+        } else {
+            // Convert height to meters if in cm
+            if (heightUnit === 'cm') {
+                if (height < 50 || height > 300) {
+                    showBMIError('heightError', 'Height must be between 50 and 300 cm');
+                    isValid = false;
+                }
+                height = height / 100; // Convert cm to meters
             } else {
-                // Convert height to meters if in cm
-                if (heightUnit === 'cm') {
-                    if (height < 50 || height > 300) {
-                        showBMIError('heightError', 'Height must be between 50 and 300 cm');
-                        isValid = false;
-                    }
-                    height = height / 100; // Convert cm to meters
-                } else {
-                    if (height < 0.5 || height > 3) {
-                        showBMIError('heightError', 'Height must be between 0.5 and 3 meters');
-                        isValid = false;
-                    }
+                if (height < 0.5 || height > 3) {
+                    showBMIError('heightError', 'Height must be between 0.5 and 3 meters');
+                    isValid = false;
                 }
             }
+        }
 
-            // Validate weight
-            if (isNaN(weight) || weight <= 0) {
-                showBMIError('weightError', 'Please enter a valid weight');
-                isValid = false;
-            } else if (weight < 20 || weight > 300) {
-                showBMIError('weightError', 'Weight must be between 20 and 300 kg');
-                isValid = false;
-            }
+        // Validate weight
+        if (isNaN(weight) || weight <= 0) {
+            showBMIError('weightError', 'Please enter a valid weight');
+            isValid = false;
+        } else if (weight < 20 || weight > 300) {
+            showBMIError('weightError', 'Weight must be between 20 and 300 kg');
+            isValid = false;
+        }
 
-            if (isValid) {
-                // Calculate BMI
-                const bmi = weight / (height * height);
-                displayResult(bmi);
-            }
-        });
+        if (isValid) {
+            // Calculate BMI
+            const bmi = weight / (height * height);
+            console.log('Calculated BMI:', bmi); // Debug
+            displayResult(bmi);
+        }
+    });
 
+    if (resetBtn) {
         resetBtn.addEventListener('click', function() {
             bmiForm.reset();
-            resultDiv.style.display = 'none';
+            if (resultDiv) {
+                resultDiv.style.display = 'none';
+            }
             clearBMIErrors();
         });
     }
 
     function displayResult(bmi) {
+        const bmiValue = document.getElementById('bmiValue');
+        const bmiCategory = document.getElementById('bmiCategory');
+        const bmiMessage = document.getElementById('bmiMessage');
+        
+        if (!bmiValue || !bmiCategory || !bmiMessage || !resultDiv) {
+            console.error('Result elements not found!');
+            return;
+        }
+
         const bmiRounded = bmi.toFixed(1);
         bmiValue.textContent = bmiRounded;
 
@@ -97,6 +116,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show result with animation
         resultDiv.style.display = 'block';
         resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        
+        console.log('Result displayed successfully'); // Debug
     }
 
     function showBMIError(elementId, message) {
