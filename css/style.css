@@ -416,19 +416,21 @@ a {
 .input-group {
     display: flex;
     gap: 10px;
-    align-items: stretch;
+    align-items: center;
 }
 
 .input-group input {
-    flex: 3; /* Takes 75% of the space */
-    min-width: 200px; /* Minimum width for better appearance */
+    flex: 3; /* Makes input box much wider */
+    min-width: 200px;
+    padding: 12px 15px;
 }
 
 .input-group select {
-    flex: 1; /* Takes 25% of the space */
+    flex: 1; /* Makes dropdown smaller */
     width: auto;
     min-width: 80px;
     max-width: 100px;
+    padding: 12px 10px;
 }
 
 /* Additional improvements for form inputs */
