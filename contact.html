@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact WellSpring Family Clinic - Get in touch with us for any queries">
+    <title>Contact Us - WellSpring Family Clinic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h2>WellSpring Clinic</h2>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                <li><a href="appointment.html">Book Appointment</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header fade-in">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We're here to help - get in touch with our team</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info slide-in-left">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions? We're here to help. Contact us through any of the following channels:</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Address</h3>
+                            <p>123 Health Street<br>Melbourne VIC 3000<br>Australia</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>Main: (03) 9123 4567<br>Fax: (03) 9123 4568</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>info@wellspringclinic.com.au<br>appointments@wellspringclinic.com.au</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Opening Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+
+                    <div class="emergency-info">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <h3>Emergency</h3>
+                            <p>For medical emergencies, please call <strong>000</strong> or visit your nearest emergency department.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper slide-in-right">
+                    <h2>Send Us a Message</h2>
+                    <form id="contactForm" action="php/send-email.php" method="POST">
+                        <div class="form-group">
+                            <label for="contactName">Name *</label>
+                            <input type="text" id="contactName" name="name" required aria-label="Your name">
+                            <span class="error-message" id="contactNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactEmail">Email *</label>
+                            <input type="email" id="contactEmail" name="email" required aria-label="Your email">
+                            <span class="error-message" id="contactEmailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactPhone">Phone</label>
+                            <input type="tel" id="contactPhone" name="phone" aria-label="Your phone number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required aria-label="Message subject">
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" name="message" rows="5" required aria-label="Your message"></textarea>
+                            <span class="error-message" id="contactMessageError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    <div id="contactSuccess" class="success-message" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Thank you! Your message has been sent successfully. We'll get back to you soon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section fade-in">
+        <div class="container">
+            <h2>Find Us on the Map</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093747!2d144.9537353153167!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sau!4v1614311735021!5m2!1sen!2sau" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    title="WellSpring Family Clinic Location">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-heartbeat"></i> WellSpring Clinic</h3>
+                    <p>Providing quality healthcare services to our community with compassion and excellence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Health Street, Melbourne VIC 3000</p>
+                    <p><i class="fas fa-phone"></i> (03) 9123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@wellspringclinic.com.au</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WellSpring Family Clinic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

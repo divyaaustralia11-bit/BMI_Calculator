@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book an appointment at WellSpring Family Clinic - Easy online booking">
+    <title>Book Appointment - WellSpring Family Clinic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h2>WellSpring Clinic</h2>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                <li><a href="appointment.html" class="active">Book Appointment</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header fade-in">
+        <div class="container">
+            <h1>Book an Appointment</h1>
+            <p>Schedule your visit with our healthcare professionals</p>
+        </div>
+    </section>
+
+    <!-- Appointment Form Section -->
+    <section class="appointment-section">
+        <div class="container">
+            <div class="appointment-wrapper">
+                <div class="appointment-info slide-in-left">
+                    <h2>Why Choose Us?</h2>
+                    <div class="info-item">
+                        <i class="fas fa-user-md"></i>
+                        <div>
+                            <h3>Experienced Doctors</h3>
+                            <p>Our team of qualified healthcare professionals is dedicated to your wellbeing.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Flexible Hours</h3>
+                            <p>We offer extended hours to accommodate your busy schedule.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <h3>Quality Care</h3>
+                            <p>Receive comprehensive healthcare services in a comfortable environment.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-home"></i>
+                        <div>
+                            <h3>Family Friendly</h3>
+                            <p>Healthcare services for all family members from infants to seniors.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-box">
+                        <h3>Need Help?</h3>
+                        <p><i class="fas fa-phone"></i> Call us: (03) 9123 4567</p>
+                        <p><i class="fas fa-envelope"></i> Email: info@wellspringclinic.com.au</p>
+                    </div>
+                </div>
+
+                <div class="appointment-form slide-in-right">
+                    <h2>Request an Appointment</h2>
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required aria-label="Full name">
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required aria-label="Email address">
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required aria-label="Phone number">
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Preferred Date *</label>
+                            <input type="date" id="date" name="date" required aria-label="Preferred appointment date">
+                            <span class="error-message" id="dateError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time">Preferred Time *</label>
+                            <select id="time" name="time" required aria-label="Preferred appointment time">
+                                <option value="">Select a time</option>
+                                <option value="morning">Morning (8:00 AM - 12:00 PM)</option>
+                                <option value="afternoon">Afternoon (12:00 PM - 6:00 PM)</option>
+                            </select>
+                            <span class="error-message" id="timeError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Required</label>
+                            <select id="service" name="service" aria-label="Service required">
+                                <option value="">Select a service</option>
+                                <option value="general">General Consultation</option>
+                                <option value="immunization">Immunization</option>
+                                <option value="health-check">Health Check-up</option>
+                                <option value="chronic">Chronic Disease Management</option>
+                                <option value="mental">Mental Health</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Additional Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Please provide any additional information about your visit" aria-label="Additional message"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit Request</button>
+                    </form>
+                    <div id="appointmentSuccess" class="success-message" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Your appointment request has been submitted successfully! We will contact you soon to confirm.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-heartbeat"></i> WellSpring Clinic</h3>
+                    <p>Providing quality healthcare services to our community with compassion and excellence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Health Street, Melbourne VIC 3000</p>
+                    <p><i class="fas fa-phone"></i> (03) 9123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@wellspringclinic.com.au</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WellSpring Family Clinic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

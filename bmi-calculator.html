@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate your Body Mass Index (BMI) with our free online calculator">
+    <title>BMI Calculator - WellSpring Family Clinic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <h2>WellSpring Clinic</h2>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="bmi-calculator.html" class="active">BMI Calculator</a></li>
+                <li><a href="appointment.html">Book Appointment</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header fade-in">
+        <div class="container">
+            <h1>BMI Calculator</h1>
+            <p>Calculate your Body Mass Index to understand your health status</p>
+        </div>
+    </section>
+
+    <!-- BMI Calculator Section -->
+    <section class="bmi-section">
+        <div class="container">
+            <div class="bmi-wrapper slide-in-left">
+                <div class="bmi-calculator">
+                    <h2>Calculate Your BMI</h2>
+                    <p class="bmi-description">Enter your height and weight below to calculate your Body Mass Index</p>
+                    
+                    <form id="bmiForm" class="bmi-form">
+                        <div class="form-group">
+                            <label for="height">Height</label>
+                            <div class="input-group">
+                                <input type="number" id="height" step="0.01" placeholder="Enter height" required aria-label="Height input">
+                                <select id="heightUnit" aria-label="Height unit">
+                                    <option value="cm">cm</option>
+                                    <option value="m">m</option>
+                                </select>
+                            </div>
+                            <span class="error-message" id="heightError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" step="0.1" placeholder="Enter weight in kg" required aria-label="Weight input in kilograms">
+                            <span class="error-message" id="weightError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Calculate BMI</button>
+                        <button type="button" class="btn btn-secondary" id="resetBtn">Reset</button>
+                    </form>
+
+                    <div id="result" class="bmi-result" style="display: none;">
+                        <h3>Your Result</h3>
+                        <div class="result-value">
+                            <span id="bmiValue"></span>
+                        </div>
+                        <div class="result-category">
+                            <p id="bmiCategory"></p>
+                        </div>
+                        <div class="result-message">
+                            <p id="bmiMessage"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bmi-info slide-in-right">
+                    <h3>Understanding BMI</h3>
+                    <p>Body Mass Index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.</p>
+                    
+                    <div class="bmi-categories">
+                        <div class="category-item underweight">
+                            <div class="category-label">
+                                <strong>Underweight</strong>
+                                <span>BMI &lt; 18.5</span>
+                            </div>
+                            <p>You may need to gain weight. Consult with our healthcare professionals.</p>
+                        </div>
+                        
+                        <div class="category-item normal">
+                            <div class="category-label">
+                                <strong>Normal Weight</strong>
+                                <span>BMI 18.5 - 24.9</span>
+                            </div>
+                            <p>You're in a healthy weight range. Maintain your current lifestyle.</p>
+                        </div>
+                        
+                        <div class="category-item overweight">
+                            <div class="category-label">
+                                <strong>Overweight</strong>
+                                <span>BMI 25 - 29.9</span>
+                            </div>
+                            <p>Consider lifestyle changes. We can help with weight management plans.</p>
+                        </div>
+                        
+                        <div class="category-item obese">
+                            <div class="category-label">
+                                <strong>Obese</strong>
+                                <span>BMI ≥ 30</span>
+                            </div>
+                            <p>Schedule a consultation to discuss health risks and management options.</p>
+                        </div>
+                    </div>
+
+                    <div class="bmi-note">
+                        <p><strong>Note:</strong> BMI is a screening tool and does not diagnose body fatness or health. Athletes and highly active individuals may have a high BMI due to muscle mass.</p>
+                    </div>
+
+                    <a href="appointment.html" class="btn btn-primary">Book a Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-heartbeat"></i> WellSpring Clinic</h3>
+                    <p>Providing quality healthcare services to our community with compassion and excellence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Health Street, Melbourne VIC 3000</p>
+                    <p><i class="fas fa-phone"></i> (03) 9123 4567</p>
+                    <p><i class="fas fa-envelope"></i> info@wellspringclinic.com.au</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WellSpring Family Clinic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/bmi.js"></script>
+</body>
+</html>
